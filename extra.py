@@ -73,6 +73,6 @@ def print_selected_stocks(stocks, dataset_name):
 # Displaying the selected stocks for each dataset with formatted values
 print_selected_stocks(best_combination_dataset1, "Dataset 1")
 print_selected_stocks(best_combination_dataset2, "Dataset 2")
-print(f"\nExecution Time: {execution_time:.2f} seconds")
+print(f"\nExecution Time: {execution_time:.4f} seconds")
 
 
