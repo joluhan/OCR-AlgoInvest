@@ -40,3 +40,6 @@ def generate_combinations(stocks, max_investment=500):
 
     generate_all_combinations()
     return best_combination, best_profit
+
+# File path to the CSV file
+csv_file_path = 'Dataset/actions.csv'
