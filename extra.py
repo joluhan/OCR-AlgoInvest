@@ -33,3 +33,7 @@ def optimized_investment(stocks, max_investment=500):
             total_profit += stock[2]
 
     return selected_stocks, total_profit
+
+# File paths to the datasets
+dataset1_path = 'Dataset/dataset1_Python+P7.csv'
+dataset2_path = 'Dataset/dataset2_Python+P7.csv'
