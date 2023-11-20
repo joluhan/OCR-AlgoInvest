@@ -34,3 +34,7 @@ def optimized_investment(stocks, max_investment=500):
 
 # File path to the CSV file
 csv_file_path = 'Dataset/actions.csv'
+
+# Reading the stock data and finding the best combination using the optimized function
+stocks_from_csv = read_stock_data_from_csv(csv_file_path)
+best_combination_optimized, best_profit_optimized = optimized_investment(stocks_from_csv)
