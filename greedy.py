@@ -17,14 +17,13 @@ def read_stock_data_from_csv(file_path):
 # Optimized investment algorithm using a greedy approach
 def optimized_investment(stocks, max_investment=500):
     """Sorts and returns the best combination of stocks and the total profit"""
-    # 
-    sorted_stocks = sorted(stocks, key=lambda x: x[2]/x[1], reverse=True)
+    sorted_stocks = sorted(stocks, key=lambda x: x[2]/x[1], reverse=True) # Sorting by profit/cost ratio
 
     total_cost = 0
     total_profit = 0
     selected_stocks = []
 
-    for stock in sorted_stocks:
+    for stock in sorted_stocks: # Greedy approach
         if total_cost + stock[1] <= max_investment:
             selected_stocks.append(stock)
             total_cost += stock[1]
