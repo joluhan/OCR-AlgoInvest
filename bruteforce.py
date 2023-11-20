@@ -13,3 +13,30 @@ def read_stock_data_from_csv(file_path):
             profit = cost * profit_percentage / 100
             stocks.append((name, cost, profit))
     return stocks
+
+
+# Brute force algorithm to find the best combination of stocks
+def generate_combinations(stocks, max_investment=500):
+    n = len(stocks)
+    best_profit = 0
+    best_combination = []
+
+    # Recursive function to generate all combinations
+    def generate_all_combinations(index=0, current_combination=[]):
+        nonlocal best_profit, best_combination
+        if index == n:
+            total_cost = sum(stock[1] for stock in current_combination)
+            total_profit = sum(stock[2] for stock in current_combination)
+            if total_cost <= max_investment and total_profit > best_profit:
+                best_profit = total_profit
+                best_combination = current_combination.copy()
+            return
+
+        # Include current stock
+        generate_all_combinations(index + 1, current_combination + [stocks[index]])
+
+        # Exclude current stock
+        generate_all_combinations(index + 1, current_combination)
+
+    generate_all_combinations()
+    return best_combination, best_profit
