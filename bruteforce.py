@@ -47,3 +47,9 @@ csv_file_path = 'Dataset/actions.csv'
 # Reading the stock data and finding the best combination
 stocks_from_csv = read_stock_data_from_csv(csv_file_path)
 best_combination_csv, best_profit_csv = generate_combinations(stocks_from_csv)
+
+# Printing the results
+print("Best Stock Investment Combination:")
+for stock in best_combination_csv:
+    print(f"{stock[0]}: Cost {stock[1]} euros, Profit {stock[2]} euros")
+print(f"Total Profit: {best_profit_csv:.2f} euros")
