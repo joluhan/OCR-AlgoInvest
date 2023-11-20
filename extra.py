@@ -59,7 +59,9 @@ def print_selected_stocks(stocks, dataset_name):
     total_profit = sum(stock[2] for stock in stocks)
     print(f"Total Cost: {total_cost:.2f} euros, Total Profit: {total_profit:.2f} euros")
 
-
+# Displaying the selected stocks for each dataset with formatted values
+print_selected_stocks(best_combination_dataset1, "Dataset 1")
+print_selected_stocks(best_combination_dataset2, "Dataset 2")
 
 
 
