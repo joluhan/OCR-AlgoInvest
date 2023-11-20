@@ -31,3 +31,6 @@ def optimized_investment(stocks, max_investment=500):
             total_profit += stock[2]
 
     return selected_stocks, total_profit
+
+# File path to the CSV file
+csv_file_path = 'Dataset/actions.csv'
