@@ -41,3 +41,14 @@ dataset2_path = 'Dataset/dataset2_Python+P7.csv'
 # Reading the datasets
 dataset1 = read_stock_data_from_csv(dataset1_path)
 dataset2 = read_stock_data_from_csv(dataset2_path)
+
+# Applying the optimized investment algorithm to the datasets
+best_combination_dataset1, best_profit_dataset1 = optimized_investment(dataset1)
+best_combination_dataset2, best_profit_dataset2 = optimized_investment(dataset2)
+
+
+
+
+
+
+
