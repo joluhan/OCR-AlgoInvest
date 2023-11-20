@@ -1,4 +1,7 @@
 import csv
+import time
+
+start_time = time.time() # Start time of the algorithm
 
 # Function to read stock data from a CSV file
 def read_stock_data_from_csv(file_path):
@@ -13,7 +16,6 @@ def read_stock_data_from_csv(file_path):
             profit = cost * profit_percentage / 100
             stocks.append((name, cost, profit))
     return stocks
-
 
 # Brute force algorithm to find the best combination of stocks
 def generate_combinations(stocks, max_investment=500):
@@ -48,8 +50,13 @@ csv_file_path = 'Dataset/actions.csv'
 stocks_from_csv = read_stock_data_from_csv(csv_file_path)
 best_combination_csv, best_profit_csv = generate_combinations(stocks_from_csv)
 
+end_time = time.time() # End time of the algorithm
+
+execution_time = end_time - start_time # Total execution time
+
 # Printing the results
 print("Best Stock Investment Combination:")
 for stock in best_combination_csv:
     print(f"{stock[0]}: Cost {stock[1]} euros, Profit {stock[2]} euros")
 print(f"Total Profit: {best_profit_csv:.2f} euros")
+print(f"Execution Time: {execution_time:.2f} seconds")
