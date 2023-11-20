@@ -43,3 +43,7 @@ def generate_combinations(stocks, max_investment=500):
 
 # File path to the CSV file
 csv_file_path = 'Dataset/actions.csv'
+
+# Reading the stock data and finding the best combination
+stocks_from_csv = read_stock_data_from_csv(csv_file_path)
+best_combination_csv, best_profit_csv = generate_combinations(stocks_from_csv)
