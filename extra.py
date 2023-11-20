@@ -37,3 +37,7 @@ def optimized_investment(stocks, max_investment=500):
 # File paths to the datasets
 dataset1_path = 'Dataset/dataset1_Python+P7.csv'
 dataset2_path = 'Dataset/dataset2_Python+P7.csv'
+
+# Reading the datasets
+dataset1 = read_stock_data_from_csv(dataset1_path)
+dataset2 = read_stock_data_from_csv(dataset2_path)
