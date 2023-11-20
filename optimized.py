@@ -1,4 +1,7 @@
 import csv
+import time
+
+start_time = time.time() # Start time of the algorithm
 
 def read_stock_data_from_csv(file_path):
     """Reads stock data from a CSV file and returns a list of tuples"""
@@ -38,8 +41,13 @@ csv_file_path = 'Dataset/actions.csv'
 stocks_from_csv = read_stock_data_from_csv(csv_file_path)
 best_combination_optimized, best_profit_optimized = optimized_investment(stocks_from_csv)
 
+end_time = time.time() # End time of the algorithm
+
+execution_time = end_time - start_time # Total execution time
+
 # Printing the results
 print("Optimized Stock Investment Combination:")
 for stock in best_combination_optimized:
     print(f"{stock[0]}: Cost {stock[1]:.2f} euros, Profit {stock[2]:.2f} euros")
 print(f"Total Profit: {best_profit_optimized:.2f} euros")
+print(f"Execution time: {execution_time:.2f} seconds")
