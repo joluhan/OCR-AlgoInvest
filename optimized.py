@@ -50,4 +50,4 @@ print("Optimized Stock Investment Combination:")
 for stock in best_combination_optimized:
     print(f"{stock[0]}: Cost {stock[1]:.2f} euros, Profit {stock[2]:.2f} euros")
 print(f"Total Profit: {best_profit_optimized:.2f} euros")
-print(f"Execution time: {execution_time:.2f} seconds")
+print(f"Execution time: {execution_time:.4f} seconds")
