@@ -2,6 +2,7 @@ import csv
 
 # Function to read stock data from a CSV file
 def read_stock_data_from_csv(file_path):
+    """Reads stock data from a CSV file and returns a list of tuples"""
     stocks = []
     with open(file_path, newline='', encoding='utf-8') as csvfile:
         stock_reader = csv.reader(csvfile, delimiter=',')
@@ -16,6 +17,8 @@ def read_stock_data_from_csv(file_path):
 
 # Optimized investment algorithm using a greedy approach
 def optimized_investment(stocks, max_investment=500):
+    """Sorts and returns the best combination of stocks and the total profit"""
+    
     # Filtering out stocks with zero or negative costs or profits
     valid_stocks = [stock for stock in stocks if stock[1] > 0 and stock[2] >= 0]
 
