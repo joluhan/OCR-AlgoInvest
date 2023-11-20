@@ -1,4 +1,7 @@
 import csv
+import time
+
+start_time = time.time() # Start time of the algorithm
 
 # Function to read stock data from a CSV file
 def read_stock_data_from_csv(file_path):
@@ -53,6 +56,11 @@ best_combination_dataset2, best_profit_dataset2 = optimized_investment(dataset2)
 # print("Dataset 1 - Total Cost:", sum(stock[1] for stock in best_combination_dataset1), "Total Profit:", best_profit_dataset1)
 # print("Dataset 2 - Total Cost:", sum(stock[1] for stock in best_combination_dataset2), "Total Profit:", best_profit_dataset2)
 
+end_time = time.time() # End time of the algorithm
+
+# Total execution time
+execution_time = end_time - start_time 
+
 # Function to print selected stock details with two decimal places
 def print_selected_stocks(stocks, dataset_name):
     print(f"\nSelected Stocks for {dataset_name}:")
@@ -65,6 +73,6 @@ def print_selected_stocks(stocks, dataset_name):
 # Displaying the selected stocks for each dataset with formatted values
 print_selected_stocks(best_combination_dataset1, "Dataset 1")
 print_selected_stocks(best_combination_dataset2, "Dataset 2")
-
+print(f"\nExecution Time: {execution_time:.2f} seconds")
 
 
