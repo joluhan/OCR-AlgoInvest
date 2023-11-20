@@ -46,7 +46,18 @@ dataset2 = read_stock_data_from_csv(dataset2_path)
 best_combination_dataset1, best_profit_dataset1 = optimized_investment(dataset1)
 best_combination_dataset2, best_profit_dataset2 = optimized_investment(dataset2)
 
+# # Displaying the results
+# print("Dataset 1 - Total Cost:", sum(stock[1] for stock in best_combination_dataset1), "Total Profit:", best_profit_dataset1)
+# print("Dataset 2 - Total Cost:", sum(stock[1] for stock in best_combination_dataset2), "Total Profit:", best_profit_dataset2)
 
+# Function to print selected stock details with two decimal places
+def print_selected_stocks(stocks, dataset_name):
+    print(f"\nSelected Stocks for {dataset_name}:")
+    for stock in stocks:
+        print(f"{stock[0]}: Cost {stock[1]:.2f} euros, Profit {stock[2]:.2f} euros")
+    total_cost = sum(stock[1] for stock in stocks)
+    total_profit = sum(stock[2] for stock in stocks)
+    print(f"Total Cost: {total_cost:.2f} euros, Total Profit: {total_profit:.2f} euros")
 
 
 
